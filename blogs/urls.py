@@ -9,4 +9,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     # Страница со списком всех записей.
     path('posts/', views.posts, name='posts'),
+    # Страница с конкретной записью
+    path('posts/<int:post_id>', views.post, name='post')
 ]

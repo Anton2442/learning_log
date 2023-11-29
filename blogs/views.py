@@ -12,3 +12,8 @@ def posts(request):
     posts = BlogPost.objects.order_by('date_added')
     context = {'posts': posts}
     return render(request, 'blogs/posts.html', context)
+
+def post(request, post_id):
+    post = BlogPost.objects.get(id=post_id)
+    context = {'post':post}
+    return render(request, 'blogs/post.html', context)
